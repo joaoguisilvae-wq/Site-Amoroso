@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="Navbar">
       <Link to="/amor" className="title nav-title">
         Te amo mil milhões
       </Link>

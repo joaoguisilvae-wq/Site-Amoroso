@@ -1,0 +1,254 @@
+/* Container principal */
+.fotos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.fotos-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  background: var(--gradient-pink-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Galeria */
+.fotos-gallery {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+/* Grid de fotos */
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  flex: 1;
+  width: 100%;
+}
+
+/* Item da foto */
+.fotos-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.fotos-item.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.fotos-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fotos-item:hover img {
+  transform: scale(1.05);
+}
+
+.fotos-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(236, 72, 153, 0.3), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fotos-item:hover::after {
+  opacity: 1;
+}
+
+/* Setas de navegação */
+.fotos-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.fotos-arrow:hover:not(.disabled) {
+  background-color: var(--bg-tertiary);
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+  transform: scale(1.1);
+}
+
+.fotos-arrow:active:not(.disabled) {
+  transform: scale(0.95);
+}
+
+.fotos-arrow.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.fotos-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Paginação */
+.fotos-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.fotos-page-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.fotos-dots {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.fotos-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.fotos-dot:hover {
+  border-color: var(--accent-pink);
+  transform: scale(1.2);
+}
+
+.fotos-dot.active {
+  background: var(--gradient-pink-red);
+  border-color: transparent;
+  transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .fotos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .fotos-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .fotos-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .fotos-gallery {
+    gap: 1rem;
+  }
+
+  .fotos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .fotos-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fotos-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fotos-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .fotos-title {
+    font-size: 1.25rem;
+  }
+
+  .fotos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .fotos-pagination {
+    margin-top: 1.5rem;
+  }
+
+  .fotos-dots {
+    gap: 0.4rem;
+  }
+
+  .fotos-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Animação de entrada inicial */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fotos-container {
+  animation: fadeInUp 0.6s ease;
+}

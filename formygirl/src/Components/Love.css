@@ -1,0 +1,226 @@
+/* Container principal */
+.love-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Título */
+.love-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient-pink-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+/* Controles (filtro e contador) */
+.love-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botão Nova Frase */
+.btn-nova-frase {
+  background: var(--gradient-pink-red);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-nova-frase:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  opacity: 0.9;
+}
+
+.btn-nova-frase:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card da Frase */
+.frase-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.frase-card:hover {
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px var(--accent-pink-light);
+  transform: translateY(-2px);
+}
+
+.frase-card:active {
+  transform: translateY(0);
+}
+
+.frase-card.traducao-visivel {
+  border-color: var(--accent-pink);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.frase-idioma {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-pink);
+  background-color: var(--accent-pink-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.frase-texto {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Texto especial para Love */
+.love-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--gradient-pink-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Dica de clique */
+.frase-dica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-color);
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Placeholder */
+.frase-placeholder {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.frase-placeholder p {
+  color: var(--text-tertiary);
+  font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .love-container {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .love-title {
+    font-size: 1.5rem;
+  }
+
+  .love-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .filtro-select {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .frase-card {
+    padding: 1.5rem;
+  }
+
+  .frase-texto {
+    font-size: 1.1rem;
+  }
+
+  .love-text {
+    font-size: 1.4rem;
+  }
+
+  .btn-nova-frase {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .love-title {
+    font-size: 1.25rem;
+  }
+
+  .frase-card {
+    padding: 1.25rem;
+  }
+
+  .frase-texto {
+    font-size: 1rem;
+  }
+
+  .love-text {
+    font-size: 1.2rem;
+  }
+}

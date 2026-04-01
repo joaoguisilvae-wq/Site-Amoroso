@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# ForMyGirl 💕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo React romântico criado com amor.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** - Biblioteca UI
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool rápido
+- **React Router** - Navegação entre páginas
+- **React Toastify** - Notificações toast
+- **React Icons** - Ícones
 
-## React Compiler
+## 📁 Estrutura do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+formygirl/
+├── src/
+│   ├── Components/         # Componentes reutilizáveis
+│   │   ├── Frases.tsx      # Componente de frases românticas
+│   │   ├── Love.tsx        # Componente de amor
+│   │   └── Navbar.tsx      # Barra de navegação
+│   ├── routes/             # Páginas da aplicação
+│   │   ├── Amor.tsx        # Página de amor
+│   │   └── Fotos.tsx       # Página de fotos
+│   ├── data/               # Dados da aplicação
+│   │   └── frases.ts       # Coleção de frases
+│   └── main.tsx            # Ponto de entrada
+├── public/                 # Arquivos estáticos
+└── index.html              # HTML principal
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Instalação
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone o repositório
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   pnpm install
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 Scripts
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Build para produção
+- `npm run preview` - Preview da build de produção
+- `npm run lint` - Verificação de linting
+
+## 🎨 Funcionalidades
+
+- 💌 Frases românticas
+- 📸 Galeria de fotos
+- 💕 Página dedicada ao amor
+- 🎨 Design responsivo e moderno
+
+## 📄 Licença
+
+Projeto pessoal - Feito com ❤️

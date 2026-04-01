@@ -1,0 +1,271 @@
+/* Container principal */
+.frases-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Título */
+.frases-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient-pink-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+/* Controles (filtro e contador) */
+.frases-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtro-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.filtro-select {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  min-width: 180px;
+}
+
+.filtro-select:hover {
+  border-color: var(--border-color-hover);
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 3px var(--accent-pink-light);
+}
+
+.frases-count {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+/* Botão Nova Frase */
+.btn-nova-frase {
+  background: var(--gradient-pink-red);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-nova-frase:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  opacity: 0.9;
+}
+
+.btn-nova-frase:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card da Frase */
+.frase-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.frase-card:hover {
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px var(--accent-pink-light);
+  transform: translateY(-2px);
+}
+
+.frase-card:active {
+  transform: translateY(0);
+}
+
+.frase-card.traducao-visivel {
+  border-color: var(--accent-pink);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.frase-idioma {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-pink);
+  background-color: var(--accent-pink-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.frase-texto {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Dica de clique */
+.frase-dica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-color);
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Container de traduções */
+.frase-traducoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  animation: fadeIn 0.3s ease;
+}
+
+.frase-traducao {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.traducao-label {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.traducao-texto {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Placeholder */
+.frase-placeholder {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.frase-placeholder p {
+  color: var(--text-tertiary);
+  font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .frases-container {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .frases-title {
+    font-size: 1.5rem;
+  }
+
+  .frases-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .filtro-select {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .frase-card {
+    padding: 1.5rem;
+  }
+
+  .frase-texto {
+    font-size: 1.1rem;
+  }
+
+  .btn-nova-frase {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .frases-title {
+    font-size: 1.25rem;
+  }
+
+  .frase-card {
+    padding: 1.25rem;
+  }
+
+  .frase-texto {
+    font-size: 1rem;
+  }
+}
