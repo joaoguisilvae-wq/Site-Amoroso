@@ -30,4 +30,4 @@ dist-ssr
 *.mkv
 
 # Photos directory (hosted on Flickr)
-public/Img/
+# public/Img/
