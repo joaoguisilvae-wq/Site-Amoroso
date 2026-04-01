@@ -28,3 +28,6 @@ dist-ssr
 *.mov
 *.avi
 *.mkv
+
+# Photos directory (hosted on Flickr)
+public/Img/
