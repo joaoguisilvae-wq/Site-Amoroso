@@ -189,6 +189,30 @@ const Fotos = () => {
     <div className="fotos-container">
       <h1 className="fotos-title">Nossas Fotos</h1>
 
+      <div className="fotos-pagination">
+        <span className="fotos-page-info">
+          Página {currentPage + 1} de {totalPages}
+        </span>
+        <div className="fotos-dots">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              className={`fotos-dot ${currentPage === index ? "active" : ""}`}
+              onClick={() => {
+                if (!isAnimating) {
+                  setIsAnimating(true);
+                  setVisiblePhotos(new Array(currentPhotos.length).fill(false));
+                  setTimeout(() => {
+                    setCurrentPage(index);
+                  }, 300);
+                }
+              }}
+              aria-label={`Ir para página ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
       <div className="fotos-gallery">
         <button
           className={`fotos-arrow fotos-arrow-left ${currentPage === 0 ? "disabled" : ""}`}
@@ -224,30 +248,6 @@ const Fotos = () => {
         >
           <FaArrowRight />
         </button>
-      </div>
-
-      <div className="fotos-pagination">
-        <span className="fotos-page-info">
-          Página {currentPage + 1} de {totalPages}
-        </span>
-        <div className="fotos-dots">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              className={`fotos-dot ${currentPage === index ? "active" : ""}`}
-              onClick={() => {
-                if (!isAnimating) {
-                  setIsAnimating(true);
-                  setVisiblePhotos(new Array(currentPhotos.length).fill(false));
-                  setTimeout(() => {
-                    setCurrentPage(index);
-                  }, 300);
-                }
-              }}
-              aria-label={`Ir para página ${index + 1}`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Lightbox Modal */}

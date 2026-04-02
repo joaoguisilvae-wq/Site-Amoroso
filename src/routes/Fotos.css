@@ -130,30 +130,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 
 .fotos-page-info {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
 }
 
 .fotos-dots {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 100%;
 }
 
 .fotos-dot {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   border-radius: var(--radius-full);
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   cursor: pointer;
   transition:
     background-color var(--transition-fast),
@@ -161,15 +163,30 @@
     transform var(--transition-fast);
 }
 
+/* Tema claro - bolinhas pretas */
+[data-theme="light"] .fotos-dot {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] .fotos-dot:hover {
+  border-color: black;
+}
+
+[data-theme="light"] .fotos-dot.active {
+  background: var(--gradient-pink-red);
+  border-color: black;
+}
+
 .fotos-dot:hover {
-  border-color: var(--accent-pink);
-  transform: scale(1.2);
+  border-color: white;
+  transform: scale(1.3);
 }
 
 .fotos-dot.active {
   background: var(--gradient-pink-red);
-  border-color: transparent;
-  transform: scale(1.2);
+  border-color: white;
+  transform: scale(1.3);
 }
 
 /* Responsividade */
@@ -195,8 +212,12 @@
   }
 
   .fotos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fotos-item {
+    aspect-ratio: 3/2;
   }
 
   .fotos-arrow {
@@ -220,21 +241,13 @@
   }
 
   .fotos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  .fotos-pagination {
-    margin-top: 1.5rem;
-  }
-
-  .fotos-dots {
-    gap: 0.4rem;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .fotos-dot {
-    width: 8px;
-    height: 8px;
+    width: 14px;
+    height: 14px;
   }
 }
 
