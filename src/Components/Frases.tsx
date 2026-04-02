@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { frases_bonitas } from "../data/frases";
 import type { FraseBonita } from "../data/frases";
 import "./Frases.css";
+import { FaSmileBeam } from "react-icons/fa";
 
 const Frases = () => {
   const [currentFrase, setCurrentFrase] = useState<FraseBonita | null>(null);
@@ -89,7 +90,12 @@ const Frases = () => {
 
   return (
     <div className="frases-container">
-      <h1 className="frases-title">Frases Inspiradoras</h1>
+      <h1 className="frases-title">
+        Frases romantiquinhas hehe
+        <span className="title-icon">
+          <FaSmileBeam />
+        </span>
+      </h1>
 
       <div className="frases-controls">
         <label htmlFor="filtro-idioma" className="filtro-label">

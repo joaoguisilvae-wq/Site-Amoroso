@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { eu_te_amo } from "../data/frases";
 import type { EuTeAmo } from "../data/frases";
 import "./Love.css";
+import { FaHeartPulse } from "react-icons/fa6";
 
 const Love = () => {
   const [currentFrase, setCurrentFrase] = useState<EuTeAmo | null>(null);
@@ -36,7 +37,12 @@ const Love = () => {
 
   return (
     <div className="love-container">
-      <h1 className="love-title">"Eu te amo" pelo mundo</h1>
+      <h1 className="love-title">
+        Eus te amo
+        <span className="title-icon">
+          <FaHeartPulse />
+        </span>
+      </h1>
 
       <div className="love-controls">
         <label htmlFor="filtro-idioma-love" className="filtro-label">
