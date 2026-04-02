@@ -90,12 +90,13 @@ const photosList = [
   "Img/IMG-20260326-WA0029.jpeg",
 ];
 
-const PHOTOS_PER_PAGE = 8;
+const PHOTOS_PER_PAGE = 4;
 
 const Fotos = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [visiblePhotos, setVisiblePhotos] = useState<boolean[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
   const totalPages = Math.ceil(photosList.length / PHOTOS_PER_PAGE);
   const startIndex = currentPage * PHOTOS_PER_PAGE;
@@ -121,6 +122,9 @@ const Fotos = () => {
       setTimeout(() => {
         setCurrentPage((prev) => prev + 1);
       }, 300);
+    }
+    if (currentPage === totalPages - 1) {
+      setCurrentPage(0);
     }
   }, [currentPage, totalPages, isAnimating, currentPhotos.length]);
 
@@ -149,13 +153,37 @@ const Fotos = () => {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedPhoto !== null) {
+        if (e.key === "Escape") setSelectedPhoto(null);
+        return;
+      }
       if (e.key === "ArrowLeft") goToPrevious();
       if (e.key === "ArrowRight") goToNext();
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [goToPrevious, goToNext]);
+  }, [goToPrevious, goToNext, selectedPhoto]);
+
+  const openPhoto = (photo: string) => {
+    setSelectedPhoto(photo);
+  };
+
+  const closePhoto = () => {
+    setSelectedPhoto(null);
+  };
+
+  // Manage body overflow when lightbox is open
+  useEffect(() => {
+    if (selectedPhoto !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedPhoto]);
 
   return (
     <div className="fotos-container">
@@ -177,20 +205,21 @@ const Fotos = () => {
               key={`${currentPage}-${index}`}
               className={`fotos-item ${visiblePhotos[index] ? "visible" : ""}`}
               style={{ animationDelay: `${index * 80}ms` }}
+              onClick={() => openPhoto(photo)}
             >
               <img
                 src={photo}
                 alt={`Foto ${startIndex + index + 1}`}
                 loading="lazy"
+                className="fotos-image"
               />
             </div>
           ))}
         </div>
 
         <button
-          className={`fotos-arrow fotos-arrow-right ${currentPage === totalPages - 1 ? "disabled" : ""}`}
+          className={`fotos-arrow fotos-arrow-right`}
           onClick={goToNext}
-          disabled={currentPage === totalPages - 1}
           aria-label="Próxima página"
         >
           <FaArrowRight />
@@ -220,6 +249,29 @@ const Fotos = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedPhoto && (
+        <div className="fotos-lightbox" onClick={closePhoto}>
+          <div
+            className="fotos-lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="fotos-lightbox-close"
+              onClick={closePhoto}
+              aria-label="Fechar"
+            >
+              ×
+            </button>
+            <img
+              src={selectedPhoto}
+              alt="Foto ampliada"
+              className="fotos-lightbox-image"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
