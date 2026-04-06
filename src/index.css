@@ -1,35 +1,35 @@
-/* Tema Escuro (padrão) */
+/* Tema Pink (padrão) - Dark */
 :root {
   /* Cores de fundo */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --bg-tertiary: #1a1a1a;
-  --bg-card: #1e1e1e;
+  --bg-primary: #1e132e;
+  --bg-secondary: #2a1a3a;
+  --bg-tertiary: #3a254a;
+  --bg-card: #2a1a3a;
 
   /* Cores de texto */
-  --text-primary: #e5e5e5;
-  --text-secondary: #a3a3a3;
-  --text-tertiary: #737373;
+  --text-primary: #ff9e9e;
+  --text-secondary: #ff6b9d;
+  --text-tertiary: #ff4081;
 
   /* Cores de destaque */
-  --accent-pink: #ec4899;
-  --accent-pink-hover: #db2777;
-  --accent-pink-light: rgba(236, 72, 153, 0.1);
+  --accent-pink: #ff4081;
+  --accent-pink-hover: #f50057;
+  --accent-pink-light: rgba(255, 64, 129, 0.15);
 
-  --accent-red: #ef4444;
-  --accent-red-hover: #dc2626;
-  --accent-red-light: rgba(239, 68, 68, 0.1);
+  --accent-red: #ff4081;
+  --accent-red-hover: #f50057;
+  --accent-red-light: rgba(255, 64, 129, 0.15);
 
-  --accent-blue: #3b82f6;
-  --accent-blue-hover: #2563eb;
-  --accent-blue-light: rgba(59, 130, 246, 0.1);
+  --accent-blue: #ff9e9e;
+  --accent-blue-hover: #ff6b9d;
+  --accent-blue-light: rgba(255, 158, 158, 0.15);
 
   --accent-black: #000000;
   --accent-black-light: rgba(0, 0, 0, 0.3);
 
   /* Bordas */
-  --border-color: #262626;
-  --border-color-hover: #404040;
+  --border-color: #3a254a;
+  --border-color-hover: #5a3a7a;
 
   /* Sombras */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -37,9 +37,9 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
 
   /* Gradientes */
-  --gradient-pink-red: linear-gradient(135deg, #ec4899, #ef4444);
-  --gradient-blue-pink: linear-gradient(135deg, #3b82f6, #ec4899);
-  --gradient-dark: linear-gradient(180deg, #141414, #0a0a0a);
+  --gradient-pink-red: linear-gradient(135deg, #ff4081, #ff9e9e);
+  --gradient-blue-pink: linear-gradient(135deg, #ff6b9d, #ff4081);
+  --gradient-dark: linear-gradient(180deg, #2a1a3a, #1e132e);
 
   /* Transições */
   --transition-fast: 150ms ease;
@@ -54,48 +54,194 @@
   --radius-full: 9999px;
 }
 
-/* Tema Claro */
-[data-theme="light"] {
-  /* Cores de fundo */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f5;
-  --bg-tertiary: #e5e5e5;
-  --bg-card: #ffffff;
+/* Tema Pink - Light */
+[data-theme="pink-light"] {
+  --bg-primary: #fff0f5;
+  --bg-secondary: #fce4ec;
+  --bg-tertiary: #f8bbd0;
+  --bg-card: #fff0f5;
 
-  /* Cores de texto */
-  --text-primary: #171717;
-  --text-secondary: #525252;
-  --text-tertiary: #737373;
+  --text-primary: #c2185b;
+  --text-secondary: #e91e63;
+  --text-tertiary: #f48fb1;
 
-  /* Cores de destaque */
-  --accent-pink: #ec4899;
-  --accent-pink-hover: #db2777;
-  --accent-pink-light: rgba(236, 72, 153, 0.1);
+  --accent-pink: #ff4081;
+  --accent-pink-hover: #f50057;
+  --accent-pink-light: rgba(255, 64, 129, 0.1);
 
-  --accent-red: #ef4444;
-  --accent-red-hover: #dc2626;
-  --accent-red-light: rgba(239, 68, 68, 0.1);
+  --accent-red: #ff4081;
+  --accent-red-hover: #f50057;
+  --accent-red-light: rgba(255, 64, 129, 0.1);
 
-  --accent-blue: #3b82f6;
-  --accent-blue-hover: #2563eb;
-  --accent-blue-light: rgba(59, 130, 246, 0.1);
+  --accent-blue: #ff4081;
+  --accent-blue-hover: #f50057;
+  --accent-blue-light: rgba(255, 64, 129, 0.1);
 
   --accent-black: #000000;
   --accent-black-light: rgba(0, 0, 0, 0.1);
 
-  /* Bordas */
-  --border-color: #e5e5e5;
-  --border-color-hover: #d4d4d4;
+  --border-color: #fce4ec;
+  --border-color-hover: #f8bbd0;
 
-  /* Sombras */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 
-  /* Gradientes */
-  --gradient-pink-red: linear-gradient(135deg, #ec4899, #ef4444);
-  --gradient-blue-pink: linear-gradient(135deg, #3b82f6, #ec4899);
-  --gradient-dark: linear-gradient(180deg, #f5f5f5, #e5e5e5);
+  --gradient-pink-red: linear-gradient(135deg, #ff4081, #ff9e9e);
+  --gradient-blue-pink: linear-gradient(135deg, #ff6b9d, #ff4081);
+  --gradient-dark: linear-gradient(180deg, #fce4ec, #fff0f5);
+}
+
+/* Tema Matrix (Verde) - Dark */
+[data-theme="matrix-dark"] {
+  --bg-primary: #0d1b1e;
+  --bg-secondary: #162d30;
+  --bg-tertiary: #1b3a3e;
+  --bg-card: #162d30;
+
+  --text-primary: #00ff9d;
+  --text-secondary: #4dffcc;
+  --text-tertiary: #00e68c;
+
+  --accent-pink: #00ff9d;
+  --accent-pink-hover: #00e68c;
+  --accent-pink-light: rgba(0, 255, 157, 0.15);
+
+  --accent-red: #00ff9d;
+  --accent-red-hover: #00e68c;
+  --accent-red-light: rgba(0, 255, 157, 0.15);
+
+  --accent-blue: #00ff9d;
+  --accent-blue-hover: #00e68c;
+  --accent-blue-light: rgba(0, 255, 157, 0.15);
+
+  --accent-black: #000000;
+  --accent-black-light: rgba(0, 0, 0, 0.3);
+
+  --border-color: #1b3a3e;
+  --border-color-hover: #2a5a5e;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+
+  --gradient-pink-red: linear-gradient(135deg, #00ff9d, #4dffcc);
+  --gradient-blue-pink: linear-gradient(135deg, #00ff9d, #4dffcc);
+  --gradient-dark: linear-gradient(180deg, #162d30, #0d1b1e);
+}
+
+/* Tema Matrix - Light */
+[data-theme="matrix-light"] {
+  --bg-primary: #f0fff4;
+  --bg-secondary: #e8f9f0;
+  --bg-tertiary: #d4f8e8;
+  --bg-card: #f0fff4;
+
+  --text-primary: #2ecc71;
+  --text-secondary: #27ae60;
+  --text-tertiary: #2ecc71;
+
+  --accent-pink: #2ecc71;
+  --accent-pink-hover: #27ae60;
+  --accent-pink-light: rgba(46, 204, 113, 0.1);
+
+  --accent-red: #2ecc71;
+  --accent-red-hover: #27ae60;
+  --accent-red-light: rgba(46, 204, 113, 0.1);
+
+  --accent-blue: #2ecc71;
+  --accent-blue-hover: #27ae60;
+  --accent-blue-light: rgba(46, 204, 113, 0.1);
+
+  --accent-black: #000000;
+  --accent-black-light: rgba(0, 0, 0, 0.1);
+
+  --border-color: #d4f8e8;
+  --border-color-hover: #c8f4e0;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  --gradient-pink-red: linear-gradient(135deg, #2ecc71, #00ff9d);
+  --gradient-blue-pink: linear-gradient(135deg, #2ecc71, #00ff9d);
+  --gradient-dark: linear-gradient(180deg, #e8f9f0, #f0fff4);
+}
+
+/* Tema Minimal - Dark */
+[data-theme="minimal-dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #252525;
+  --bg-tertiary: #2d2d2d;
+  --bg-card: #252525;
+
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #b0b0b0;
+
+  --accent-pink: #ffffff;
+  --accent-pink-hover: #e0e0e0;
+  --accent-pink-light: rgba(255, 255, 255, 0.1);
+
+  --accent-red: #ffffff;
+  --accent-red-hover: #e0e0e0;
+  --accent-red-light: rgba(255, 255, 255, 0.1);
+
+  --accent-blue: #007acc;
+  --accent-blue-hover: #005fa3;
+  --accent-blue-light: rgba(0, 122, 204, 0.15);
+
+  --accent-black: #000000;
+  --accent-black-light: rgba(0, 0, 0, 0.3);
+
+  --border-color: #2d2d2d;
+  --border-color-hover: #404040;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+
+  --gradient-pink-red: linear-gradient(135deg, #ffffff, #e0e0e0);
+  --gradient-blue-pink: linear-gradient(135deg, #007acc, #ffffff);
+  --gradient-dark: linear-gradient(180deg, #252525, #1a1a1a);
+}
+
+/* Tema Minimal - Light */
+[data-theme="minimal-light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f8f8;
+  --bg-tertiary: #f0f0f0;
+  --bg-card: #ffffff;
+
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-tertiary: #666666;
+
+  --accent-pink: #000000;
+  --accent-pink-hover: #333333;
+  --accent-pink-light: rgba(0, 0, 0, 0.05);
+
+  --accent-red: #000000;
+  --accent-red-hover: #333333;
+  --accent-red-light: rgba(0, 0, 0, 0.05);
+
+  --accent-blue: #007acc;
+  --accent-blue-hover: #005fa3;
+  --accent-blue-light: rgba(0, 122, 204, 0.1);
+
+  --accent-black: #000000;
+  --accent-black-light: rgba(0, 0, 0, 0.1);
+
+  --border-color: #f0f0f0;
+  --border-color-hover: #d0d0d0;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  --gradient-pink-red: linear-gradient(135deg, #000000, #333333);
+  --gradient-blue-pink: linear-gradient(135deg, #007acc, #000000);
+  --gradient-dark: linear-gradient(180deg, #f8f8f8, #ffffff);
 }
 
 /* Reset básico */

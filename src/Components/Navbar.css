@@ -84,6 +84,7 @@ nav a.active::after {
 .flex {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 /* Botão de troca de tema */
@@ -99,6 +100,14 @@ nav a.active::after {
   border: 1px solid var(--border-color);
   transition: all var(--transition-fast);
   cursor: pointer;
+  gap: 0.25rem;
+}
+
+/* Botão de tema com nome */
+.theme-toggle .theme-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: none;
 }
 
 .theme-toggle:hover {
@@ -110,6 +119,18 @@ nav a.active::after {
 
 .theme-toggle:active {
   transform: scale(0.95);
+}
+
+/* Mostrar nome do tema em telas maiores */
+@media (min-width: 768px) {
+  .theme-toggle .theme-name {
+    display: inline;
+  }
+
+  .theme-toggle {
+    width: auto;
+    padding: 0 0.75rem;
+  }
 }
 
 /* Responsividade */

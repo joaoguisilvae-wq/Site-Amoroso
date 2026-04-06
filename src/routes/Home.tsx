@@ -1,4 +1,5 @@
 import "./Home.css";
+import HeartRain from "../Components/HeartRain";
 
 const Home = () => {
   return (
@@ -103,6 +104,7 @@ const Home = () => {
           </figure>
         </div>
       </section>
+      <HeartRain />
     </div>
   );
 };

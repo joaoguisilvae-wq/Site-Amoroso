@@ -111,6 +111,23 @@
   transform: scale(1.1);
 }
 
+.fotos-arrow.love-arrow {
+  background: var(--gradient-pink-red);
+  border-color: var(--accent-pink);
+  animation: lovePulse 1.5s ease infinite;
+}
+
+@keyframes lovePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.8);
+  }
+}
+
 .fotos-arrow:active:not(.disabled) {
   transform: scale(0.95);
 }

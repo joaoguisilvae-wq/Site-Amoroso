@@ -1,6 +1,7 @@
 ﻿import { useState, useEffect, useCallback } from "react";
 import "./Fotos.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import LoveAnimation from "../Components/LoveAnimation";
 
 // Lista de fotos (apenas arquivos .jpg e .jpeg, excluindo vídeos)
 const photosList = [
@@ -97,6 +98,7 @@ const Fotos = () => {
   const [visiblePhotos, setVisiblePhotos] = useState<boolean[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const [showLoveAnimation, setShowLoveAnimation] = useState(false);
 
   const totalPages = Math.ceil(photosList.length / PHOTOS_PER_PAGE);
   const startIndex = currentPage * PHOTOS_PER_PAGE;
@@ -123,10 +125,16 @@ const Fotos = () => {
         setCurrentPage((prev) => prev + 1);
       }, 300);
     }
-    if (currentPage === totalPages - 1) {
-      setCurrentPage(0);
+    if (currentPage === totalPages - 1 && !showLoveAnimation) {
+      setShowLoveAnimation(true);
     }
-  }, [currentPage, totalPages, isAnimating, currentPhotos.length]);
+  }, [
+    currentPage,
+    totalPages,
+    isAnimating,
+    currentPhotos.length,
+    showLoveAnimation,
+  ]);
 
   // Reset visible photos when page changes
   useEffect(() => {
@@ -242,11 +250,15 @@ const Fotos = () => {
         </div>
 
         <button
-          className={`fotos-arrow fotos-arrow-right`}
+          className={`fotos-arrow fotos-arrow-right ${currentPage === totalPages - 1 ? "love-arrow" : ""}`}
           onClick={goToNext}
           aria-label="Próxima página"
         >
-          <FaArrowRight />
+          {currentPage === totalPages - 1 && !showLoveAnimation ? (
+            "❤️"
+          ) : (
+            <FaArrowRight />
+          )}
         </button>
       </div>
 
@@ -272,6 +284,10 @@ const Fotos = () => {
           </div>
         </div>
       )}
+      <LoveAnimation
+        trigger={showLoveAnimation}
+        onEnd={() => setShowLoveAnimation(false)}
+      />
     </div>
   );
 };

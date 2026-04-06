@@ -1,0 +1,131 @@
+.love-animation-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.love-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--gradient-pink-red);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.love-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.love-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.love-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.love-big-heart {
+  font-size: 150px;
+  animation: heartBeat 1s ease infinite;
+  filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.8));
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.love-message {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+  animation: messageFade 0.5s ease;
+  padding: 0 2rem;
+  max-width: 90%;
+}
+
+@keyframes messageFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.love-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.love-rain-item {
+  position: absolute;
+  top: -50px;
+  user-select: none;
+  animation: heartFall linear forwards;
+}
+
+@keyframes heartFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 768px) {
+  .love-big-heart {
+    font-size: 100px;
+  }
+
+  .love-message {
+    font-size: 1.3rem;
+  }
+}
