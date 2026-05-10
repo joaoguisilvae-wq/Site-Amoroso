@@ -91,7 +91,7 @@ const Frases = () => {
   return (
     <div className="frases-container">
       <h1 className="frases-title">
-        Frases romantiquinhas hehe
+        Frasesinhas
         <span className="title-icon">
           <FaSmileBeam />
         </span>
