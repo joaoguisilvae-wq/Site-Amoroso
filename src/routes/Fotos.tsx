@@ -1,7 +1,6 @@
 ﻿import { useState, useEffect, useCallback } from "react";
 import "./Fotos.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import LoveAnimation from "../Components/LoveAnimation";
 
 // Lista de fotos (apenas arquivos .jpg e .jpeg, excluindo vídeos)
 const photosList = [
@@ -283,10 +282,6 @@ const Fotos = () => {
           </div>
         </div>
       )}
-      <LoveAnimation
-        trigger={showLoveAnimation}
-        onEnd={() => setShowLoveAnimation(false)}
-      />
     </div>
   );
 };
